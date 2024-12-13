@@ -1,0 +1,44 @@
+img{
+    width: 50px;
+}
+
+
+
+.quantity{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.quantity  input{
+    border-radius:2px ;
+    width: 80%;
+    border: 1px solid var(--secondary-color);
+    text-align: center;
+
+}
+.quantity button{
+    border: none;
+    border-radius:2px ;
+    background-color: var(--secondary-color);
+    color: white;
+    transition: all ease .5s;
+}
+.quantity button:active{
+    transform: scale(.9);
+}
+
+.order-btn{
+    background-color: white;
+    padding: 10px 20px ;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    transition: all ease .5s;
+    cursor:inherit;
+    color:  var(--secondary-color);
+    margin-left:10px ;
+}
+.order-btn:active{
+    transform: scale(.9);
+}

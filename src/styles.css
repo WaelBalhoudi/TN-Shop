@@ -1,0 +1,188 @@
+/* You can add global styles to this file, and also import other style files */
+@import './../node_modules/slick-carousel/slick/slick.css';
+@import './../node_modules/slick-carousel/slick/slick-theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import '~bootstrap/dist/css/bootstrap.css';
+
+:root{
+    --primary-color:#4e47c6;
+    --secondary-color:#fab440;
+    --gray:#f5f5f5;
+    --balck1:#222;
+    --balck2:#999;
+    --color-text:#330707;
+    --color-light:rgba(255, 255, 255, 0.58);
+    --color-bg-primary:#fafafa;
+
+    /* FONTS */
+    --font-primary:'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-bold:700;
+    --font-light:400;
+    --font-size-text:13px;
+    --font-size-titel:20px;
+    --font-size-section:48px;
+    
+    /* SIZES */
+    --size-primary:25px;
+    --size-half:10px;
+    --size-double:50px;
+    --margin-primary:var(--size-primary);
+    --margin-half:var(--size-half);
+    --margin-double:var(--size-double);
+    --padding-primary:var(--size-primary);
+    --padding-half:var(--size-half);
+    --padding-double:var(--size-double);
+}
+*{
+    /* border: 1px solid red ; */
+    font-family:Arial, Helvetica, sans-serif;
+} 
+body{
+    background-color: #f7f7f7;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+
+}
+.btn-form{
+    padding: 10px 20px ;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    transition: all ease .5s;
+    cursor:inherit;
+    color: white;
+}
+.btn-form:active{
+    transform: scale(.9);
+}
+
+.form-control{
+    box-shadow: none;
+    transition: all ease .5s;
+}
+
+.form-control:focus{
+    border: none;
+    outline: none;
+    box-shadow: 0 0 0 .25rem #fab3406a;
+}
+
+
+/* Component's stylesheet or global stylesheet */
+.slick-prev:before, .slick-next:before {
+    color: #4e47c6;
+}
+.right-panel .slick-next{
+    top: -12px;
+    left: 96%;
+}
+.right-panel .slick-prev{
+    top: -12px;
+    left: 92%;
+}
+
+.left-panel .slick-next{
+    top: -12px;
+    left: 90%;
+}
+.left-panel .slick-prev{
+    top: -12px;
+    left: 80%;
+}
+
+.popup-panel{
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.section-body{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+
+    
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-header h2{
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.card-header button{
+    border: none;
+    border-radius: 6px;
+    padding:7px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    transition: all ease .5s;
+
+}
+.card-header button:hover{
+    color: var(--primary-color);
+    background-color: white;
+    border: 1px solid var(--primary-color);
+}
+.card-header button:active{
+    transform: scale(.9);
+}
+.section-body table{
+    width: 100%;
+    margin-top: 10px;
+}
+.section-body table tr:first-child{
+    font-weight: 600;
+    background-color: var(--secondary-color);
+    color: white;
+    
+}
+.section-body table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    
+}
+.section-body table tr:last-child{
+    border-bottom: none;
+}
+.section-body table td,
+.section-body table th{
+    padding: 10px;
+   
+}
+.section-body table th:last-child,
+.section-body table td:nth-child(6),
+.section-body table td:nth-child(7),
+.section-body table td:nth-child(8)
+{
+    text-align: center;
+}
+.section-body table tr:first-child:hover{
+    background-color: var(--secondary-color);
+}
+.section-body table tr:hover{
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+
+td:first-child,
+th:first-child
+{
+   border-radius: 5px 0 0 5px; 
+}
+td:last-child,
+th:last-child
+{
+   border-radius: 0 5px 5px  0; 
+}
+
+
+

@@ -1,0 +1,213 @@
+
+section{
+    padding: var(--padding-double) 0;
+    position: relative;
+    width: 100%;
+}
+.text-center{
+    text-align: center;
+    line-height:calc(var(--size-primary)*1.5);
+}
+.subscribe{
+    background-color: var(--primary-color);
+    color: white;
+}
+.section-title{
+    font-size: var(--font-size-section);
+    padding-bottom: var(--padding-primary);
+    color: white;
+
+}
+.section-subtitle{
+    font-size: var(--font-size-titel);
+    margin-bottom:var(--margin-primary);
+
+}
+
+
+.link-btn{
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: var(--padding-half) var(--padding-primary);
+    transition: all ease .4s;
+    width: 300px;
+    margin: auto;
+}
+.link-btn:hover{
+    background-color: white;
+    color: var(--primary-color);
+}
+/* ----------------services------------ */
+
+.section-down-arrow{
+    position: absolute;
+    top: 0;
+    /* border:  1px solid red; */
+}
+
+.container{
+    margin-top: 30px;
+}
+.cards{
+    margin:50px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: var(--size-primary);
+    position: relative;
+    z-index: 1; 
+}
+.card{
+    text-align: center;
+    padding: var(--padding-primary)calc(var(--padding-primary)/2);
+    line-height: 25px;
+    transition: all ease-in .2s;
+    line-height: calc(var(--size-primary)*1.1);
+    color: var(--primary-colorcolor);
+
+}
+.card:hover{
+   cursor: pointer;
+   transform: scale(1.05);
+
+}
+.title{
+    color: var(--primary-colorcolor);
+    text-align: center;
+    margin-top: 100px;
+}
+img{
+    width: 60px;
+    height: 60px;
+    margin: 20px auto;
+}
+.card-title{
+    margin-bottom: calc(var(--margin-primary)/2);
+}
+.card p{
+    color: var(--color-text);
+    margin-bottom:calc(var(--margin-primary)/2);
+    
+}
+
+.btn-form{
+    width: 50%;
+    margin: auto;
+    transition: ease .5s all;
+}
+.btn-form:hover{
+    border: 1px solid var(--primary-colorcolor);
+    background-color: white;
+    color: var(--primary-colorcolor);
+}
+
+.articles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap:3rem;
+}
+.article{
+    background-color: white;
+    padding: 20px;
+    border-radius: 2px;
+
+    transition: all ease-in .3s;
+} 
+.article:hover{
+    transform: scale(1.05);
+}
+.article img{
+    width: 100%;
+    height: 320px;
+}
+.article .d-flex{
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.article-body i{
+    color: var(--color-primary);
+    margin: 10px;
+}
+.news{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.news button{
+    margin: 30px auto;
+}
+@media(max-width:800px){
+   
+    .d-flex{
+        flex-direction: column;
+    }
+    .section-img{
+        width: 100%;
+
+    }
+    .why-choose-us-contant h2{
+        text-align: center;
+        margin-bottom: var(--margin-half);
+        
+    }
+
+}
+
+body{
+    position: relative;
+    height: 120vh;
+    background: url(./../../../../assets/shoppingImages/bg.jpg);
+    background-size: cover;
+}
+
+.layer{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 500px;
+    background-color:#40404014;
+    padding: 100px 120px;
+    color: white;
+    letter-spacing: 3px;
+}
+.box{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation:animate 100s linear infinite  ;
+    margin: 200px auto;
+}
+@keyframes animate{
+    0%{
+        transform: perspective(1000px)rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(
+        transparent,
+        transparent,#0004
+    );
+}
+
+.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

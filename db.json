@@ -1,0 +1,332 @@
+{
+  "users": [
+    {
+      "id": "21c5",
+      "fullName": "wael balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "bbf9",
+      "fullName": "Zaki yousfi",
+      "email": "zaki@gmail.com",
+      "password": "fjj%M777",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "c78c",
+      "fullName": "azer",
+      "email": "azerty@gmail.com",
+      "password": "Azerty123@",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "b73c",
+      "fullName": "test",
+      "email": "test@gmail.com",
+      "password": "azzertyuilM7777//@",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "ca22",
+      "fullName": "hazar rachdi",
+      "email": "hazar@gmail.com",
+      "password": "111",
+      "cart": [
+        {
+          "productId": "9b28",
+          "productTitle": "SMARTPHONE INFINIX",
+          "image": "./../../../../assets/smartphone-infinix-hot-40i-8go-256go-vert.jpg ",
+          "prix": 450,
+          "quantity": 6,
+          "totalPrix": 13500
+        },
+        {
+          "productId": "4a11",
+          "productTitle": "TV VEGA 32'' LED HD + SUPPORT GRATUIT",
+          "image": "./../../../../assets/tv-vega-32-led-hd-noir-support_1.jpg ",
+          "prix": 640,
+          "quantity": 2,
+          "totalPrix": 1280
+        }
+      ],
+      "role": "user"
+    },
+    {
+      "id": "62b4",
+      "fullName": "bou7amid",
+      "email": "achourahmed709@gmail.com",
+      "password": "Aa@0123456789",
+      "cart": [],
+      "role": "user"
+    },
+    {
+      "id": "581a",
+      "fullName": "balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "password": "sldjfkMMMQSDf@78",
+      "cart": [
+        {
+          "productId": "3af4",
+          "productTitle": "PC PORTABLE HP 15-FC0020NK",
+          "image": "./../../../../assets/pc-portable-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-8g-256go-ssd-gris-2.jpg ",
+          "prix": 455,
+          "quantity": 1,
+          "totalPrix": 455
+        }
+      ],
+      "role": "user"
+    },
+    {
+      "id": "cbcc",
+      "fullName": "m",
+      "email": "maryemmnefki14@gmail.com",
+      "password": "jjh,bjjh444MMM@",
+      "cart": [],
+      "role": "user"
+    },
+    {
+      "id": "72db",
+      "fullName": "imen ouerdiene",
+      "email": "imenouerdiene@gmail.com",
+      "password": "123imen.A@",
+      "cart": [],
+      "role": "user"
+    },
+    {
+      "id": "d280",
+      "fullName": "w",
+      "email": "wb506028@gmail.com",
+      "password": "MMMMkkk@555",
+      "cart": [
+        {
+          "productId": "3af4",
+          "productTitle": "PC PORTABLE HP 15-FC0020NK",
+          "image": "./../../../../assets/pc-portable-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-8g-256go-ssd-gris-2.jpg ",
+          "prix": 455,
+          "quantity": 3,
+          "totalPrix": 2730
+        }
+      ],
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "3af4",
+      "title": "PC PORTABLE HP 15-FC0020NK",
+      "category": "Informatique",
+      "description": "Ecran 15.6\" Full HD, IPS - Processeur: AMD Ryzen™ 3 7320U (2.4 GHz up to 4.1 GHz Turbo max, 4 Mo de mémoire cache, Quad-Core) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 8 Go - Disque Dur: 256 Go SSD - Carte Graphique: AMD Radeon™ 610M intégrée avec Wifi - Bluetooth, 2x USB 3.2 Gen 1, 1x USB-C 3.2 Gen 1, 1x HDMI 1.4, 1x prise combo casque/microphone (3,5 mm) et lecteur de carte - Couleur: Gris - Garantie: 2 ans",
+      "price": 455,
+      "quantity": 21,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/pc-portable-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-8g-256go-ssd-gris-2.jpg ",
+        "./../../../../assets/pc-portable-hp-15-fc0020nk-amd-ryzen-3-4go-256go-ssd-silver-bleu-6.jpg ",
+        "./../../../../assets/pc-portable-hp-15-fc0020nk-amd-ryzen-3-4go-256go-ssd-silver-bleu-4_1.jpg ",
+        "./../../../../assets/pc-portable-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-8g-256go-ssd-gris-4.jpg ",
+        "./../../../../assets/pc-portable-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-8g-256go-ssd-gris-6.jpg ",
+        "./../../../../assets/pc-portable-lenovo-ideapad-slim-3-15amn8-amd-ryzen-3-8g-256go-ssd-gris-t.jpg "
+      ]
+    },
+    {
+      "id": "9b28",
+      "title": "SMARTPHONE INFINIX",
+      "category": "Telephone",
+      "description": "Écran: 6.56\" LCD IPS (720x 1612px), 90Hz - Processeur: Unisoc T606 (12 nm) Octa-core (Cortex-A75 2x1,6 GHz et Cortex-A55 6x1,6 GHz), Mali-G57 MP1 - Système d'exploitation: Android 13, XOS 13 - RAM: 8Go (extensible jusqu'à 16Go) - Stockage: 256Go - Caméra arrière: Dual 50MP + 0.08MP, Frontale: 32MP - Connectivité: Wifi 4G et Bluetooth - Batterie: 5000mAh - Charge rapide 18W - Empreinte digitale - Double SIM - Couleur: Vert - Garantie: 1an",
+      "price": 450,
+      "quantity": 28,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/smartphone-infinix-hot-40i-8go-256go-vert.jpg "
+      ]
+    },
+    {
+      "id": "9eed",
+      "title": "SMARTPHONE NOKIA",
+      "category": "Telephone",
+      "description": "Écran: 6.56\" LCD IPS (720x 1612px), 90Hz - Processeur: Unisoc T606 (12 nm) Octa-core (Cortex-A75 2x1,6 GHz et Cortex-A55 6x1,6 GHz), Mali-G57 MP1 - Système d'exploitation: Android 13, XOS 13 - RAM: 8Go (extensible jusqu'à 16Go) - Stockage: 256Go - Caméra arrière: Dual 50MP + 0.08MP, Frontale: 32MP - Connectivité: Wifi 4G et Bluetooth - Batterie: 5000mAh - Charge rapide 18W - Empreinte digitale - Double SIM - Couleur: Vert - Garantie: 1an",
+      "price": 275,
+      "quantity": 18,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/a13-black_28_1.jpg ",
+        "./../../../../assets/a13-black1---copie_5_1.jpg ",
+        "./../../../../assets/a13-black2_12_1.jpg "
+      ]
+    },
+    {
+      "id": "5951",
+      "title": "SMARTPHONE SAMSUNG",
+      "category": "Telephone",
+      "description": "Écran: 6.56\" LCD IPS (720x 1612px), 90Hz - Processeur: Unisoc T606 (12 nm) Octa-core (Cortex-A75 2x1,6 GHz et Cortex-A55 6x1,6 GHz), Mali-G57 MP1 - Système d'exploitation: Android 13, XOS 13 - RAM: 8Go (extensible jusqu'à 16Go) - Stockage: 256Go - Caméra arrière: Dual 50MP + 0.08MP, Frontale: 32MP - Connectivité: Wifi 4G et Bluetooth - Batterie: 5000mAh - Charge rapide 18W - Empreinte digitale - Double SIM - Couleur: Vert - Garantie: 1an",
+      "price": 645,
+      "quantity": 41,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/a14-black_1.jpg ",
+        "./../../../../assets/a14-black1_1.jpg ",
+        "./../../../../assets/a14-black3_1.jpg "
+      ]
+    },
+    {
+      "id": "fd78",
+      "title": "MONTRE CONNECTÉE T800 ULTRA - NOIR",
+      "category": "Connected whatch",
+      "description": "Montre Connectée T800 Ultra - Écran HD 1.99\" - Connectivité: Bluetooth 5.0 - Batterie: lithium Polymère 320 mAh - Autonomie : 7 à 15 jours - Fonction de surveillance de la santé en temps réel - Résistance à l'eau: IP67 - Matériau : alliage de Zinc + Gel de silice - Couleur: Noir - Garantie: 3 mois",
+      "price": 64,
+      "quantity": 41,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/montre-connectee-t800-ultra-noir-1.jpg "
+      ]
+    },
+    {
+      "id": "4a11",
+      "title": "TV VEGA 32'' LED HD + SUPPORT GRATUIT",
+      "category": "TV",
+      "description": "Tv VEGA 32 \"LED HD - Résolution: 1366 x 768 Pixels - Sortie Audio: 2× 8W - Temps de réponse: 6.5 ms - Aspect ratio: 16:9 - Luminosité: 200 cd/m² - Contraste: 1000:1 - Angle de vue: 178 x 178 - Maximum colors: 16.7M - Connecteurs: 3x HDMI, 1x USB - Dimensions: 72.7 x 46.5 x 7.6 cm - Poids: 3.77 Kg - Garantie: 3 ans",
+      "price": 640,
+      "quantity": 74,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/tv-vega-32-led-hd-noir-support_1.jpg "
+      ]
+    },
+    {
+      "id": "f8eb",
+      "title": "LAVE LINGE FRONTAL",
+      "category": "Home Appliance",
+      "description": "Lave Linge Frontal LG - Capacité de lavage: 8 Kg - Vitesse d’essorage: 1200 tours/min - Classe énergitique: A+++ - Smart Diagnosis™ - Moteur inverter DirectDrive - Moteur Inverter DD - 6 mouvements associés DD - Avec Afficheur- Design élégant - Plus durable et plus hygiénique - Dimensions: H x L x P: 85 x 60 x 56 cm - Couleur: Silver - Garantie: 3 ans + 10 ans sur Moteur",
+      "price": 124,
+      "quantity": 10,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/lave-linge-frontale-lg-fh2j3tng5p-8kg---silver.jpg ",
+        "./../../../../assets/lave-linge-frontale-lg-fh2j3tng5p-8kg---silver7.jpg ",
+        "./../../../../assets/lave-linge-frontale-lg-fh2j3tng5p-8kg---silver9_1.jpg ",
+        "./../../../../assets/lave-linge-frontale-lg-fh2j3tng5p-8kg-silver-a.jpg "
+      ]
+    },
+    {
+      "id": "733c",
+      "title": "FOUR ÉLECTRIQUE STAR ONE",
+      "category": "Home Appliance",
+      "description": "Four Électrique STAR ONE KF3125 - Volume: 36 Litres  - Puissance: 1420 Watts - Un plateau rectangulaire - Un plateau rond - Résistance à  la forme de chrome - Façade en Métal - Minuterie réglable avec alarme et fonction d'arrêt automatique - Contrôle de chaleur - Couleur: Silver - Garantie 1 an",
+      "price": 99,
+      "quantity": 17,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/four-_lectrique-star-one-kf3125-36-litres---silver11.jpg ",
+        "./../../../../assets/four-electrique-star-one-kf3125-36-litres-silver-2.jpg "
+      ]
+    },
+    {
+      "id": "93f3",
+      "title": "CAFETIÈRE ÉLECTRIQUE SWISSCOOK",
+      "category": "Home Appliance",
+      "description": "Four Électrique STAR ONE KF3125 - Volume: 36 Litres  - Puissance: 1420 Watts - Un plateau rectangulaire - Un plateau rond - Résistance à  la forme de chrome - Façade en Métal - Minuterie réglable avec alarme et fonction d'arrêt automatique - Contrôle de chaleur - Couleur: Silver - Garantie 1 an",
+      "price": 999,
+      "quantity": 17,
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/cafeti_re-_lectrique-swisscook-6-tasses-650w---noir1.jpg ",
+        "./../../../../assets/cafeti_re-_lectrique-swisscook-6-tasses-650w---noir2.jpg ",
+        "./../../../../assets/cafeti_re-_lectrique-swisscook-6-tasses-650w---noir5.jpg "
+      ]
+    },
+    {
+      "id": "dbb4",
+      "title": "This is the first item's",
+      "category": "Informatique",
+      "description": "Écran: 6.56\" LCD IPS (720x 1612px), 90Hz - Processeur: Unisoc T606 (12 nm) Octa-core (Cortex-A75 2x1,6 GHz et Cortex-A55 6x1,6 GHz), Mali-G57 MP1 - Système d'exploitation: Android 13, XOS 13 - RAM: 8Go (extensible jusqu'à 16Go) - Stockage: 256Go - Caméra arrière: Dual 50MP + 0.08MP, Frontale: 32MP - Connectivité: Wifi 4G et Bluetooth - Batterie: 5000mAh - Charge rapide 18W - Empreinte digitale - Double SIM - Couleur: Vert - Garantie: 1an",
+      "price": "5555",
+      "quantity": "50",
+      "likes": [],
+      "sales": [],
+      "images": [
+        "./../../../../assets/pc-portable-hp-15-fc0020nk-amd-ryzen-3-4go-256go-ssd-silver-bleu-1_1.jpg ",
+        "./../../../../assets/pc-portable-hp-15-fc0020nk-amd-ryzen-3-4go-256go-ssd-silver-bleu-2_1.jpg ",
+        "./../../../../assets/pc-portable-hp-15-fc0020nk-amd-ryzen-3-4go-256go-ssd-silver-bleu-3.jpg "
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "844f",
+      "name": "wael balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "phone": "54213094",
+      "subject": "test",
+      "message": "test",
+      "date": "2024-04-21"
+    },
+    {
+      "id": "ff21",
+      "name": "wael balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "phone": "54213094",
+      "subject": "test",
+      "message": "test",
+      "date": "2024-04-21"
+    },
+    {
+      "id": "31d5",
+      "name": "wael balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "phone": "54213094",
+      "subject": "test",
+      "message": "tes",
+      "date": "2024-04-21"
+    },
+    {
+      "id": "e9fd",
+      "name": "wael balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "phone": "54213094",
+      "subject": "test",
+      "message": "tes",
+      "date": "2024-04-21"
+    },
+    {
+      "id": "eb98",
+      "name": "wael balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "phone": "54213094",
+      "subject": "test",
+      "message": "tes",
+      "date": "2024-04-21"
+    },
+    {
+      "id": "e7b4",
+      "name": "wael balhoudi",
+      "email": "waelbalhoudi@gmail.com",
+      "phone": "54213094",
+      "subject": "test",
+      "message": "hh",
+      "date": "2024-04-21"
+    },
+    {
+      "id": "bf2e",
+      "name": "Zaki yousfi",
+      "email": "zaki@gmail.com",
+      "phone": "12345678",
+      "subject": "test",
+      "message": "hello",
+      "date": "2024-05-23"
+    }
+  ]
+}

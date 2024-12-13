@@ -1,0 +1,107 @@
+<div class="dashboard-container">
+    <div class="navigation-menu">
+        <ul>
+            <li >
+                <a routerLink="#">
+                    <span class="icons">
+                        <img src="./../../../../assets/tn icon.png" alt="tn icon" class="tn-icon">
+                    </span>
+                    <span class="title">Brand Name</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(1)" class="hovered">
+                <a routerLink="/Admin Dashboard">
+                    <span class="icons">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(2)">
+                <a routerLink="users">
+                    <span class="icons">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Customers</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(3)">
+                <a routerLink="Products">
+                    <span class="icons">
+                        <i class="fa fa-product-hunt" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Products</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(4)">
+                <a routerLink="/Contact">
+                    <span class="icons">
+                        <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(5)">
+                <a routerLink="#">
+                    <span class="icons">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Help</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(6)">
+                <a routerLink="#">
+                    <span class="icons">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(7)">
+                <a routerLink="#">
+                    <span class="icons">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Password</span>
+                </a>
+            </li>
+            <li (mouseover)=" activeLink(8)" (click)="logOut()">
+                <a routerLink="/Home">
+                    <span class="icons">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div class="toggle" (click)="onpenDashBoard()">
+                <div id="bn" class="btn">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+            <div class="search">
+                <div class="form-group">
+                    <input type="text" class="form-contol" placeholder="Search here ...">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div class="left">
+                <div class="message-alert"><i class="fa fa-bell" aria-hidden="true"></i><p>{{messages.length}}</p></div>
+                    <div class="admin-profile">
+                <img src="./../../../../assets/admin-profile-image.png" alt="">
+         </div>
+            </div>
+        </div>
+       <div class="dashboard-body">
+       
+         <router-outlet></router-outlet>
+
+        </div>
+    </div>
+</div>
+

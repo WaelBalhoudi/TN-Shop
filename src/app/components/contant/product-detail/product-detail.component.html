@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div class="container">
+    <div class="product-detail row popup-panel">
+        <div class="col-md">
+            <div class="slider">
+                <img [src]="img" alt="" class="slide" *ngFor="let img of product.images">
+            </div>
+        </div>
+        <div class="col-md">
+            <h3 class="my-2"><strong>{{product.title}}</strong></h3>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+            <div class="price">
+                <h4><strong>{{product.price}}$</strong></h4>
+                <h4><span>{{productService.getNewPrice(product.price)}}$</span></h4>
+              </div>
+              <p>{{product.description}}</p>
+            <div class="buttons">
+                <button class="cart-button" (click)="cartClick()" (click)="addToCart()" [disabled]="productAddedItToCart" >
+                    <span class="add-to-cart">Add to cart</span>
+                    <span class="added">Added</span>
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-archive" aria-hidden="true"></i>
+                </button>
+                <i class="fa fa-heart-o" aria-hidden="true" ></i>
+
+            </div>
+          
+           
+            <p class="mt-3" style="font-size: 13px;"><strong> <i class="fa fa-truck" aria-hidden="true" style="margin-right: 10px;"></i>Free delivery on orders over $30.0</strong></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

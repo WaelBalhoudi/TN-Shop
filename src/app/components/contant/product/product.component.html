@@ -1,0 +1,214 @@
+<div *ngIf="shared.userId=='21c5'">
+    <div class="products">
+        <div class="section-body popup-panel">
+            <div class="card-header">
+                <ul class="flter-bar">
+                    <li  class="fliter-item active"   (click)=" addActiveToFilterItme(0)" (click)="ngOnInit()"><a>All Products</a></li>
+                    <li class="fliter-item" (click)=" addActiveToFilterItme(1)"  (click)="getProductByCategory('Informatique')"><a >Informatique</a></li>
+                    <li class="fliter-item" (click)=" addActiveToFilterItme(2)" (click)="getProductByCategory('Telephone')"><a >Telephone</a></li>
+                    <li class="fliter-item" (click)=" addActiveToFilterItme(3)" (click)="getProductByCategory('Connected whatch')"><a >Connected whatch</a></li>
+                    <li class="fliter-item" (click)=" addActiveToFilterItme(4)" (click)="getProductByCategory('Home Appliance')"><a >Home Appliance</a></li>
+                    <li class="fliter-item" (click)=" addActiveToFilterItme(5)" ><a >More...</a></li>
+                </ul>
+                <button data-bs-toggle="modal" data-bs-target="#addProductModal">add a new products</button>
+            </div>
+            <table>
+                
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Sales</th>
+                        <th>Likes</th>
+                        <th colspan="3">Actions</th>
+                    </tr>
+                    <tr *ngFor="let product of products">
+                        <td>
+                            <img [src]="product.images[0]"[alt]="product.title">
+                        </td>
+                        <td>{{product.title}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>{{product.sales.length}}</td>
+                        <td style="text-align: start;">{{product.likes.length}}</td>
+                        <td><i class="fa fa-eye"></i></td>
+                        <td><i class="fa fa-pencil" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#updateProductModal" (click)="getProductById(product.id)"></i></td>
+                        <td><i class="fa fa-trash" aria-hidden="true" (click)="deletePoduct(product.id)"></i></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              
+                <div class="modal-header">
+                    <div class="modal-header-title">
+                      <div class="modal-titles">
+                        <h4 class="modal-title" id="exampleModalLabel">Add a New Product</h4> 
+                      </div>
+                      
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <form action="" #productForm="ngForm" (submit)="addProduct(productForm)">
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product Title</label>
+                                <input type="text" class="form-control" placeholder="Enter your Product Title" name="title" required ngModel #title="ngModel"> 
+                                <div class="alert alert-danger" *ngIf="title.invalid && title.touched">
+                                   the product title is a required field
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product Price</label>
+                                <input type="text" class="form-control" placeholder="Enter your Product Price" name="price" required ngModel #price="ngModel" pattern="[0-9]{1,4}">
+                                <div class="alert alert-danger" *ngIf="price.errors?.['pattern'] && price.invalid && price.touched">
+                                    the product price is a required field
+                                </div>
+                            </div>
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product Quantity</label>
+                                <input type="text" class="form-control" placeholder="Enter your Product quantity" name="quantity" required ngModel #quantity="ngModel"> 
+                                <div class="alert alert-danger" *ngIf="quantity.invalid && quantity.touched">
+                                   the product quantity is a required field
+                                </div>
+                            </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="from-group mb-3">
+                                    <label for="" class="mb-3">Product Category</label>
+                                    <input type="text" class="form-control" placeholder="Enter your Product Category" name="category" required ngModel #category="ngModel">
+                                    <div class="alert alert-danger" *ngIf="category.invalid && category.touched">
+                                        the product category is required filed
+                                    </div>
+                                </div>
+                                <div class="from-group mb-3">
+                                    <label for="" class="mb-3">Product Image</label>
+                                    <input type="file" class="form-control" name="image" required ngModel #image="ngModel" multiple (change)="onFileChange($event)">
+                                    <div class="alert alert-danger" *ngIf="image.invalid && image.touched" >
+                                        the product image is required filed
+                                    </div>
+                                    <img src="" alt="">
+                                </div>
+                                </div>
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product description</label>
+                                <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Enter your Product description" name="description" required ngModel #description="ngModel"></textarea>
+                                <div class="alert alert-danger" *ngIf="description.invalid && description.touched">
+                                    the description is requried filed
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div></div>
+                                <div class="buttons">
+                                    <button type="submit" class="btn send-btn" [disabled]="productForm.invalid" data-bs-dismiss="modal">Add</button>
+                                    <button type="reset" class="btn reset-btn">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="updateProductModal" tabindex="-1" aria-labelledby="updateProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              
+                <div class="modal-header">
+                    <div class="modal-header-title">
+                      <div class="modal-titles">
+                        <h4 class="modal-title" id="exampleModalLabel">Update Product</h4> 
+                      </div>
+                      
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product Title</label>
+                                <input type="text" class="form-control" placeholder="Enter your Product Title" name="title" required ngModel #title="ngModel" [(ngModel)]="product.title"> 
+                                <div class="alert alert-danger" *ngIf="title.invalid && title.touched">
+                                   the product title is a required field
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product Price</label>
+                                <input type="text" class="form-control" placeholder="Enter your Product Price" name="price"  [(ngModel)]="product.price">
+                               
+                            </div>
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product Quantity</label>
+                                <input type="text" class="form-control" placeholder="Enter your Product quantity" name="quantity" [(ngModel)]="product.quantity"> 
+                                <div class="alert alert-danger" *ngIf="quantity.invalid && quantity.touched">
+                                   the product quantity is a required field
+                                </div>
+                            </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="from-group mb-3">
+                                    <label for="" class="mb-3">Product Category</label>
+                                    <input type="text" class="form-control" placeholder="Enter your Product Category" name="category" [(ngModel)]="product.category">
+                                   
+                                </div>
+                                <div class="from-group mb-3">
+                                    <label for="" class="mb-3">Product Image</label>
+                                    <input type="file" class="form-control" name="image"  multiple (change)="onFileChange($event)">
+                                   
+                                </div>
+                                </div>
+                            <div class="from-group mb-3">
+                                <label for="" class="mb-3">Product description</label>
+                                <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Enter your Product description" [(ngModel)]="product.description"></textarea>
+                            
+                            </div>
+                            <div class="d-flex">
+                                <div></div>
+                                <div class="buttons">
+                                    <button type="submit" class="btn send-btn"  data-bs-dismiss="modal" (click)="updatePoducts(product.id,product)">Update</button>
+                                    <button type="reset" class="btn reset-btn">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body *ngIf="shared.userId!='21c5'" class="mt-5" >
+    <div class="container">
+        <h2 style="margin: auto; margin-top: 20px; ">Explore Our Top Products</h2>
+        <ul class="flter-bar">
+            <li  class="fliter-item active"   (click)=" addActiveToFilterItme(0)" (click)="ngOnInit()"><a>All Products</a></li>
+            <li class="fliter-item" (click)=" addActiveToFilterItme(1)"  (click)="getProductByCategory('Informatique')"><a >Informatique</a></li>
+            <li class="fliter-item" (click)=" addActiveToFilterItme(2)" (click)="getProductByCategory('Telephone')"><a >Telephone</a></li>
+            <li class="fliter-item" (click)=" addActiveToFilterItme(3)" (click)="getProductByCategory('Connected whatch')"><a >Connected whatch</a></li>
+            <li class="fliter-item" (click)=" addActiveToFilterItme(4)" (click)="getProductByCategory('Home Appliance')"><a >Home Appliance</a></li>
+            <li class="fliter-item" (click)=" addActiveToFilterItme(5)" ><a >More...</a></li>
+        </ul>
+    </div>
+    <div class="container grid">
+        
+       <div class="product"  *ngFor="let product of products"  [routerLink]="['/Product Detail',product.id]">
+        <div class="item panel">
+            <p class="price-panel">{{product.quantity}}</p>
+            <img [src]="product.images[0]"[alt]="product.title">
+            <div class="item-body">
+              <h3>{{product.title}}</h3>
+              <p>{{productService.getShortDescription(product.description)}}</p>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+              <div class="price">
+                <strong>{{product.price}}$</strong>
+                <span>{{productService.getNewPrice(product.price)}}$</span>
+              </div>
+            </div>
+          </div>
+       </div>
+    </div> 
+</body>
+

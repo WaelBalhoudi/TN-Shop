@@ -1,0 +1,69 @@
+.form-group{
+    position: relative;
+}
+#contact{
+    margin: 70px;
+}
+.form-group i{
+    position: absolute;
+    font-size:15px;
+    color: var(--primary-color);
+    left: 8px;
+    top: 18px;
+}
+input,textarea{
+    padding-left:30px;
+}
+.d-flex{
+    justify-content: space-between;
+}
+iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.map{
+    border: 2px solid white;
+    width: 47%;
+}
+
+.contact-form{
+    width: 50%;
+}
+/* .contact-form-descrption{
+
+} */
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.form-group{
+    width: 90%;
+
+}
+input{
+    padding: 7px;
+    padding-left: 30px;
+    margin: 5px 0;
+}
+
+
+.input-row input{
+    width: 100%;
+}
+
+
+@media(max-width:1000px){
+    .d-flex{
+        flex-direction: column;
+    }
+    .map,.contact-form{
+        width: 100%;
+    }
+    .contact-form-descrption{
+        text-align: center;
+    }
+    
+
+}

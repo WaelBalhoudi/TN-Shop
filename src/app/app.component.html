@@ -1,0 +1,9 @@
+<app-user-view *ngIf="sharedService.userId!=sharedService.adminId"></app-user-view>
+<app-admin-view *ngIf="sharedService.userId==sharedService.adminId"></app-admin-view>
+<ngx-spinner 
+bdColor = "rgba(0, 0, 0, 0.8)"
+ size = "medium" color = "#fab440" 
+ type = "square-jelly-box" 
+ [fullScreen] = "true">
+ <p style="color: white" > Loading... </p>
+</ngx-spinner>

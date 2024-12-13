@@ -1,0 +1,499 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <!-- *ngIf="userId!='21c5'" -->
+    <div class="container">
+        <div class="d-flex navbar-top">
+          <p>Get on extra 10% off or more on selcet hotels with Momber Pricing Join now, it's free!</p>
+          <ul class=" mune top-mune">
+            <li data-bs-toggle="modal" data-bs-target="#logInModal" *ngIf="!userId"><a>Log In</a></li>
+            <li data-bs-toggle="modal" data-bs-target="#signUpModal" *ngIf="!userId"><a>Sign Up</a></li>
+            <li *ngIf="userId" (click)="logOut()"><a>
+              Log out
+            </a></li>
+            <li>
+              <select name="" id="" class="position">
+                <option value="Englsh">Englsh</option>
+                <option value="Englsh">Englsh</option>
+                <option value="Englsh">Englsh</option>
+                <option value="Englsh">Englsh</option>
+              </select>
+            </li>
+            <li>
+              <select name="" id="" class="position">
+                <option value="$ US Doller">$ US Doller</option>
+                <option value="$ US Doller">$ US Doller</option>
+                <option value="$ US Doller">$ US Doller</option>
+                <option value="$ US Doller">$ US Doller</option>
+              </select>
+            </li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="d-flex navbar-body">
+            <h1 class="navbar-brand" href="#">
+              <img src="./../assets/TN Shop Logo.png" alt="">          
+            </h1>
+            <form >
+              <select name="search cat" id="" class="position" [(ngModel)]="productService.catigorieSearch">
+                <option [value]="productService.catigorieSearch">{{productService.catigorieSearch}}</option>
+                <option value="Informatique">Informatique</option>
+                <option value="Telephone">Telephone</option>
+                <option value="Connected whatch">Connected whatch</option>
+                <option value="Home Appliance">Home Appliance</option>
+              </select>
+              <div class="linge"></div>
+              <input type="text" name="search" placeholder="Search here..." [(ngModel)]="productService.search">
+              <i class="fa fa-search position"  routerLink="/Products">     Search</i>
+            </form>
+            <ul class="mune">
+              <li class="mune-item" *ngIf="like" (click)="like=!like"><i class="fa fa-heart-o" aria-hidden="true" ></i></li>
+              <li class="mune-item" *ngIf="!like" (click)="like=!like"><i class="fa fa-heart" aria-hidden="true" ></i></li>
+              <li class="mune-item cart" data-bs-toggle="modal" data-bs-target="#cartModal" (click)="showCartPorduct()"><i class="fa fa-shopping-cart" aria-hidden="true"><p *ngIf="userId">{{productQuantityInCart}}</p></i></li>
+              <li><img src="./../../../../assets/profaleImage.png" alt="profileImage" class="profileImage" *ngIf="userId "  data-bs-toggle="modal" data-bs-target="#profileModal" ></li>
+            </ul>
+        </div> 
+        <div class="d-flex navbar-bottom">
+          <ul class="mune mune-bottom">
+            <li routerLink="/Home"><a>All Categories</a></li>
+            <li routerLink="/Home"><a>Home</a></li>
+            <li><a>Featers</a></li>
+            <li routerLink="/Products"><a>All Product</a></li>
+            <li><a>Blog</a></li>
+            <li routerLink="/Contact"><a>Contact</a></li>
+          </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- _____________________________sign Up moadal __________________________________________ -->
+
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        
+      <div class="modal-header">
+          <div class="modal-header-title">
+            <div class="modal-titles">
+              <h4 class="modal-title" id="logInModalLabel" data-bs-toggle="modal" data-bs-target="#logInModal">Log In</h4>
+              <h4 class="modal-title-active" id="logInModalLabel">Sign Up</h4>
+            </div>
+            
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+          <div class="modal-body">
+
+            <div *ngIf="!showVerifictionCodeInSingUp">
+                 <div class="contune-with">
+              <!-- <img src="./../../../../assets/LinksImages/googl.png" alt="test">
+              -->
+             
+        
+<p>Contune With Google</p> 
+<div id="google-btn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+</div>
+            <div class="contune-with">
+              <img src="./../../../../assets/LinksImages/facebook.png">
+              <p>Contune With FaceBook</p>
+            </div>
+
+            <div class="devegin">
+              <div class="line"></div>
+              <p>OR</p>
+              <div class="line"></div>
+            </div>
+            <form #singUpForm="ngForm" (submit)="signUp(singUpForm)" >
+              <div class="from-group mb-4">
+                <label for="">Full Name</label>
+                <input type="text" name="fullName" id="" class="form-control mt-3" required ngModel #fullName="ngModel">
+                <div class="alert alert-danger mt-2" *ngIf="fullName.touched && fullName.invalid">
+                    The Full Name is a required field
+                </div>
+                
+              </div>
+              <div class="from-group mb-4">
+                <label for="">Email</label>
+                <input type="email" name="email" id="" class="form-control mt-3" required ngModel #email="ngModel" pattern="[a-zA-Z0-9]+@[a-zA-Z-0-9]+.com">
+                <div class="alert alert-danger mt-2" *ngIf="email.invalid && email.touched">
+                  <div *ngIf="email.errors?.['required']">the email is  a required field</div>
+                  <div *ngIf="email.errors?.['pattern']">the email doesn't seem right </div>
+
+                </div>
+              </div>
+             
+              <div class="from-group mb-4">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control mt-3" required ngModel #password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&*]).{8,}">
+                <div class="alert  mt-2" *ngIf="password.invalid && password.touched" [ngClass]="{'alert-danger':password.errors?.['required']}">
+                  <div *ngIf="password.errors?.['required']">Password is required.</div>
+                  <div *ngIf="password.errors?.['pattern']&& !password.errors?.['required']">
+                    <div class="mb-1">
+                      <i class="fa fa-check-circle-o" *ngIf="password.value.length >= 8" aria-hidden="true"> At least 8 Characters</i> 
+                      <i class="fa fa-times-circle" *ngIf="password.value.length < 8" aria-hidden="true"> At least 8 Characters</i>
+                    </div>
+                   <div class="mb-1"> 
+                    <i class="fa fa-check-circle-o" *ngIf="password.value.match(uppercasePattern)" aria-hidden="true"> Including Uppercase Letter</i>
+                    <i class="fa fa-times-circle" *ngIf="!password.value.match(uppercasePattern)" aria-hidden="true"> Including Uppercase Letter</i>
+                    </div>
+                    <div class="mb-1"> 
+                    <i class="fa fa-check-circle-o" *ngIf="password.value.match(lowercasePattern)" aria-hidden="true"> Including Lowercase Letter</i>
+                    <i class="fa fa-times-circle" *ngIf="!password.value.match(lowercasePattern)" aria-hidden="true"> Including Lowercase Letter</i>
+                    </div>
+  
+                    <div class="mb-1"> 
+                      <i class="fa fa-check-circle-o" *ngIf="password.value.match(symbolPattern)" aria-hidden="true"> Including Symbol</i>
+                      <i class="fa fa-times-circle" *ngIf="!password.value.match(symbolPattern)" aria-hidden="true"> Including Symbol</i>
+                    </div>
+                    
+                    <div class="mb-1">
+                      <i class="fa fa-check-circle-o" *ngIf="password.value.match(passwordPattern)" aria-hidden="true"> Including Number</i> 
+                      <i class="fa fa-times-circle" *ngIf="!password.value.match(passwordPattern)" aria-hidden="true"> Including Number</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              
+              <button type="submit" class="btn-form log-in-btn" [disabled]="singUpForm.invalid" [ngStyle]="{'cursor': singUpForm.invalid ? 'not-allowed' : 'pointer'}">Sign Up</button>
+
+            </form>
+            </div>
+           
+
+
+            <div *ngIf="showVerifictionCodeInSingUp">
+              <p class="p">We send you an OTP code on your email Enter Int to verify your account <samp class="timer"><strong>you have {{ timeLeft }} seconds</strong></samp></p>
+                <form action="" #codeOTP="ngForm" (submit)="verifyCodeAndSignUP(codeOTP,user)">
+                  <div class="otp-inputs">
+                  <input type="text" name="n1"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1" >
+                  <input type="text" name="n2"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1" >
+                  <input type="text" name="n3"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1" >
+                  <input type="text" name="n4"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1" >
+                  </div>
+                  
+                 <button type="submit" class="btn-form log-in-btn" [disabled]="codeOTP.invalid" [ngStyle]="{'cursor': codeOTP.invalid ? 'not-allowed' : 'pointer'}" >Verify Your Account</button>
+  
+                </form>
+             </div>
+
+          </div>
+          
+  </div>
+  </div>
+</div>
+
+
+<!-- _____________________________log in moadal __________________________________________ -->
+
+
+<div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        
+          <div class="modal-header">
+              <div class="modal-header-title">
+                <div class="modal-titles">
+                  <h4 class="modal-title-active" id="logInModalLabel">Log In</h4>
+                  <h4 class="modal-title" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</h4>
+                </div>
+                
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+              <div class="modal-body">
+                <div class="contune-with">
+                  <img src="./../../../../assets/LinksImages/googl.png" alt="test">
+                  <p>Contune With Google</p>
+                </div>
+                <div class="contune-with">
+                  <img src="./../../../../assets/LinksImages/facebook.png">
+                  <p>Contune With FaceBook</p>
+                </div>
+
+                <div class="devegin">
+                  <div class="line"></div>
+                  <p>OR</p>
+                  <div class="line"></div>
+                </div>
+                <form #logInForm="ngForm" (submit)="logIn(logInForm)">
+                  <div class="from-group mb-4">
+                    <label for="">Email</label>
+                    <input type="email" name="login" id="" class="form-control mt-3" required ngModel #login="ngModel" pattern="[a-zA-Z0-9]+@[a-zA-Z-0-9]+.com">
+                    <div class="alert alert-danger mt-2" *ngIf="login.invalid && login.touched">
+                      <div *ngIf="login.errors?.['required']">the email is  a required field !!!</div>
+                      <div *ngIf="login.errors?.['pattern']">the email doesn't seem right !!!</div>
+    
+                    </div>
+                  </div>
+                 
+                  <div class="from-group mb-4">
+                    <label for="password">Password</label>
+                    <input type="password" name="pass" id="pass" class="form-control mt-3" required ngModel #pass="ngModel">
+                    <div class="alert alert-danger  mt-2" *ngIf="pass.invalid && pass.touched">
+                      Password is a required field !!!
+                    </div>
+                  
+                  </div>
+                  <button type="submit" class="btn-form log-in-btn" data-bs-dismiss="modal" [disabled]="logInForm.invalid" [ngStyle]="{'cursor': logInForm.invalid ? 'not-allowed' : 'pointer'}" >Log In</button>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"(click)="showModal()">Forgot Password?</a>
+                </form>
+                  
+              </div>
+              
+      </div>
+  </div>
+</div>
+
+
+<!-- _____________________________forgot password moadal __________________________________________ -->
+
+
+
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        
+      <div class="modal-header">
+          <div class="modal-header-title">
+        
+              <h4 class="modal-title-active-forgot" id="forgotPasswordModal">Forgot Your Password?</h4>
+           
+            
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+          <div class="modal-body">
+           <div *ngIf="!showPnelOPTCode && showPanelChangePassword==false">
+            <p class="p">No worries! Fill in your email and we'll send you a link to reset your passowrd</p>
+            <form #forgotPasswordForm="ngForm" (submit)="findUserByEmail(forgotPasswordForm)">
+              <div class="from-group mb-4">
+                <input type="email" name="e" id="" class="form-control mt-3"  required ngModel #e="ngModel" pattern="[a-zA-Z0-9]+@[a-zA-Z-0-9]+.com">
+                <div class="alert alert-danger mt-2" *ngIf="e.invalid && e.touched">
+                  <div *ngIf="e.errors?.['required']">the email is  a required field !!!</div>
+                  <div *ngIf="e.errors?.['pattern']">the email doesn't seem right !!!</div>
+
+                </div>
+              </div>   
+              <button type="submit" class="btn-form log-in-btn"  [disabled]="forgotPasswordForm.invalid" [ngStyle]="{'cursor': forgotPasswordForm.invalid ? 'not-allowed' : 'pointer'}" >Reset Password</button>
+            </form>
+           </div>
+           <div *ngIf="showPnelOPTCode && showPanelChangePassword==false">
+            <p class="p">We send you an OTP code on your email Enter Int to verify your account <samp class="timer"><strong>you have {{ timeLeft }} seconds</strong></samp></p>
+              <form action="" #codeOTP="ngForm" (submit)="verifyOtpCode(codeOTP)">
+                <div class="otp-inputs">
+                  <input type="text" name="n1"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1">
+                  <input type="text" name="n2"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1">
+                  <input type="text" name="n3"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1">
+                  <input type="text" name="n4"  class="form-control mt-3"  required ngModel #n1="ngModel" maxlength="1">
+                  </div>
+                
+               <button type="submit" class="btn-form log-in-btn" [disabled]="codeOTP.invalid" [ngStyle]="{'cursor': codeOTP.invalid ? 'not-allowed' : 'pointer'}" >Verify Your Account</button>
+
+              </form>
+           </div>
+
+           <div *ngIf="showPanelChangePassword">
+            <form action="" #changePasswordForm="ngForm" (submit)="updatePassword(changePasswordForm)">
+              <div class="from-group mb-4">
+                <label for="">Enter the new passowrd</label>
+                <input type="password" name="password" id="p" class="form-control mt-3" required ngModel #p="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&*]).{8,}">
+                <div class="alert  mt-2" *ngIf="p.invalid && p.touched" [ngClass]="{'alert-danger':p.errors?.['required']}">
+                  <div *ngIf="p.errors?.['required']">Password is required.</div>
+                  <div *ngIf="p.errors?.['pattern']&& !p.errors?.['required']">
+                    <div class="mb-1">
+                      <i class="fa fa-check-circle-o" *ngIf="p.value.length >= 8" aria-hidden="true"> At least 8 Characters</i> 
+                      <i class="fa fa-times-circle" *ngIf="p.value.length < 8" aria-hidden="true"> At least 8 Characters</i>
+                    </div>
+                   <div class="mb-1"> 
+                    <i class="fa fa-check-circle-o" *ngIf="p.value.match(uppercasePattern)" aria-hidden="true"> Including Uppercase Letter</i>
+                    <i class="fa fa-times-circle" *ngIf="!p.value.match(uppercasePattern)" aria-hidden="true"> Including Uppercase Letter</i>
+                    </div>
+                    <div class="mb-1"> 
+                    <i class="fa fa-check-circle-o" *ngIf="p.value.match(lowercasePattern)" aria-hidden="true"> Including Lowercase Letter</i>
+                    <i class="fa fa-times-circle" *ngIf="!p.value.match(lowercasePattern)" aria-hidden="true"> Including Lowercase Letter</i>
+                    </div>
+  
+                    <div class="mb-1"> 
+                      <i class="fa fa-check-circle-o" *ngIf="p.value.match(symbolPattern)" aria-hidden="true"> Including Symbol</i>
+                      <i class="fa fa-times-circle" *ngIf="!p.value.match(symbolPattern)" aria-hidden="true"> Including Symbol</i>
+                    </div>
+                    
+                    <div class="mb-1">
+                      <i class="fa fa-check-circle-o" *ngIf="p.value.match(passwordPattern)" aria-hidden="true"> Including Number</i> 
+                      <i class="fa fa-times-circle" *ngIf="!p.value.match(passwordPattern)" aria-hidden="true"> Including Number</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn-form log-in-btn" data-bs-dismiss="modal"[disabled]="changePasswordForm.invalid" [ngStyle]="{'cursor': changePasswordForm.invalid ? 'not-allowed' : 'pointer'}">change</button>
+
+            </form>
+           </div>
+          </div>
+          
+  </div>
+  </div>
+</div>
+
+
+
+<div #exampleModal id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your modal content goes here.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- _____________________________profile moadal __________________________________________ -->
+
+
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true"  *ngIf="userId ">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div></div>
+          <div class="modal-header">
+            <div style="width: 35px;"></div>
+                <h4 class="modal-title " id="profileModalLabel">Welcome to Your Profile</h4>
+              <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="modal-body p-0 mt-2" >
+              <img src="./../../../../assets/profaleImage.png" alt="" >
+              <h4>{{user.fullName}}</h4>
+              <label class="file-input-btn">
+                <input type="file" class="file-input"/>
+                <div class="btn-style">Update Profile Image</div>
+              </label>
+              <hr>
+              <div class="d-flex">
+                <p><strong>Cart</strong></p>
+                <p>{{productQuantityInCart}}</p>
+              </div>
+              <div class="d-flex">
+                <p><strong>Sales</strong></p>
+                <p>145</p>
+              </div>
+              <div class="d-flex">
+                <p><strong>Likes</strong></p>
+                <p>89</p>
+              </div>
+              <div class="d-flex">
+                <p><strong>Messags</strong></p>
+                <p>78</p>
+              </div>
+             
+
+              
+             
+              <div class="">
+                <hr>
+                <button class="log-out-btn" (click)="logOut()" data-bs-dismiss="modal">Log Out</button>
+
+              </div>
+
+            </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true"  *ngIf="userId ">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content" *ngIf="cart.length>0">
+       
+          <div class="modal-header">
+            <div style="width: 35px;"></div>
+                <div class="modal-title d-flex" id="cartModalLabel" >
+                  <h3>{{productQuantityInCart}} Proudcts</h3>
+          
+                  <h3>Total Prix:{{productService.getTotalPriceInCart(user.cart)}}$</h3>
+                </div>
+              <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="modal-body p-0 mt-2" >
+             <table>
+              <tr>
+                <th>Product Name</th>
+                <th style="text-align: center;">Prix</th>
+                <th style="text-align: center;">Quantity</th>
+                <th style="text-align: center;">Total Prix</th>
+                <th style="text-align: center;">Delete</th>
+              </tr>
+              <tr *ngFor="let product of cart">
+                <td>{{product.productTitle}}</td>
+                <td style="text-align: center;">{{product.prix}}</td>
+                <td class="quantity">
+                  <button (click)="decreasesPoructQuantity(product)">-</button>
+                  <input type="text" name="quantity" [(ngModel)]="product.quantity" (blur)="writeQuantity(product,product.quantity)">
+                  <button  (click)="increasePoructQuantity(product)">+</button>
+                </td>
+                
+                <td style="text-align: center;">{{product.totalPrix}}</td>
+                <td style="text-align: center;" (click)="deleteProductFromCart(product.id,user)"><i class="fa fa-trash"></i></td>
+              </tr>
+             </table>
+             <button class="btn-form mt-3" routerLink="/User Cart" data-bs-dismiss="modal" aria-label="Close">See All Products</button>
+             <button class="mt-3 order-btn"  routerLink="/Pay" data-bs-dismiss="modal" aria-label="Close">Order Porducts</button>
+             
+            </div>
+      </div>
+
+
+      <div class="modal-content" *ngIf="cart.length==0">
+        <div class="modal-header" style="border-bottom: none;">
+          <div></div>
+        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+        </div>
+
+        <div class="modal-body">
+       <h2 style="text-align: center;">There is No products in your Cart</h2>
+
+        </div>
+       
+      </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="test" tabindex="-1" aria-labelledby="testLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        
+          <div class="modal-header">
+              <div class="modal-header-title">
+                <div class="modal-titles">
+                  <h4 class="modal-title-active" id="testLabel">Log In</h4>
+                  <h4 class="modal-title" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</h4>
+                </div>
+                
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+              <div class="modal-body">
+                
+            
+
+              gggg
+                  
+              </div>
+              
+      </div>
+  </div>
+</div>
