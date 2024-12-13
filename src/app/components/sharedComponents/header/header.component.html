@@ -32,7 +32,7 @@
         </div>
         <div class="d-flex navbar-body">
             <h1 class="navbar-brand" href="#">
-              <img src="./../assets/TN Shop Logo.png" alt="">          
+              <img src="TN Shop Logo.png" alt="">          
             </h1>
             <form >
               <select name="search cat" id="" class="position" [(ngModel)]="productService.catigorieSearch">
@@ -50,7 +50,7 @@
               <li class="mune-item" *ngIf="like" (click)="like=!like"><i class="fa fa-heart-o" aria-hidden="true" ></i></li>
               <li class="mune-item" *ngIf="!like" (click)="like=!like"><i class="fa fa-heart" aria-hidden="true" ></i></li>
               <li class="mune-item cart" data-bs-toggle="modal" data-bs-target="#cartModal" (click)="showCartPorduct()"><i class="fa fa-shopping-cart" aria-hidden="true"><p *ngIf="userId">{{productQuantityInCart}}</p></i></li>
-              <li><img src="./../../../../assets/profaleImage.png" alt="profileImage" class="profileImage" *ngIf="userId "  data-bs-toggle="modal" data-bs-target="#profileModal" ></li>
+              <li><img src="assets/profaleImage.png" alt="profileImage" class="profileImage" *ngIf="userId "  data-bs-toggle="modal" data-bs-target="#profileModal" ></li>
             </ul>
         </div> 
         <div class="d-flex navbar-bottom">
@@ -87,7 +87,7 @@
 
             <div *ngIf="!showVerifictionCodeInSingUp">
                  <div class="contune-with">
-              <!-- <img src="./../../../../assets/LinksImages/googl.png" alt="test">
+              <!-- <img src="assets/LinksImages/googl.png" alt="test">
               -->
              
         
@@ -96,7 +96,7 @@
 
 </div>
             <div class="contune-with">
-              <img src="./../../../../assets/LinksImages/facebook.png">
+              <img src="assets/LinksImages/facebook.png">
               <p>Contune With FaceBook</p>
             </div>
 
@@ -206,11 +206,11 @@
           </div>
               <div class="modal-body">
                 <div class="contune-with">
-                  <img src="./../../../../assets/LinksImages/googl.png" alt="test">
+                  <img src="assets/LinksImages/googl.png" alt="test">
                   <p>Contune With Google</p>
                 </div>
                 <div class="contune-with">
-                  <img src="./../../../../assets/LinksImages/facebook.png">
+                  <img src="assets/LinksImages/facebook.png">
                   <p>Contune With FaceBook</p>
                 </div>
 
@@ -375,7 +375,7 @@
               <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
             <div class="modal-body p-0 mt-2" >
-              <img src="./../../../../assets/profaleImage.png" alt="" >
+              <img src="assets/profaleImage.png" alt="" >
               <h4>{{user.fullName}}</h4>
               <label class="file-input-btn">
                 <input type="file" class="file-input"/>
